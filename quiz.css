@@ -1,0 +1,113 @@
+.quiz-answer {
+  cursor: pointer;
+}
+.quiz-button {
+  cursor: pointer;
+}
+#back-button {
+  cursor: pointer;
+}
+
+.extra {
+  display: none !important;
+}
+
+/*
+.quiz-answer:active, .quiz-button:active{
+ background-color: #007bed;
+ color: white !important;
+}
+*/
+
+.loading {
+  pointer-events: none;
+}
+
+@keyframes click-answer {
+  0% {
+    background-color: #007bed;
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*EO: Enables hover on desktop*/
+/* One or more available input mechanism(s) 
+   can hover over elements with ease 
+   for some reason ipad qualifies*/
+@media (any-hover: hover) {
+  .quiz-answer:hover {
+    background-color: rgba(0, 123, 237, 0.2);
+    color: #007bed;
+  }
+
+  .quiz-button:hover {
+    background-color: rgba(0, 123, 237, 1);
+    color: white !important;
+  }
+
+  .selected2 {
+    background-color: #007bed;
+    color: white;
+  }
+
+  /*EO: overrides hover once selected*/
+  .selected2:hover {
+    background-color: rgba(0, 123, 237, 1);
+    color: white;
+  }
+}
+
+/*Enables selection feedback on Mobile*/
+/* One or more available input mechanism(s) can hover, 
+   but not easily (e.g., many mobile devices emulate 
+   hovering when the user performs a long tap) */
+@media (any-hover: on-demand) {
+  .quiz-answer.selected2 {
+    background-color: #007bed;
+    color: white;
+    animation-name: click-answer;
+    animation-duration: 400ms;
+    animation-delay: 200ms;
+  }
+}
+
+/* One or more available input mechanism(s) cannot 
+   hover (or there are no pointing input mechanisms) */
+@media (any-hover: none) {
+  .quiz-answer.selected2 {
+    background-color: #007bed;
+    color: white;
+    animation-name: click-answer;
+    animation-duration: 400ms;
+    animation-delay: 200ms;
+  }
+}
+
+.grid-quiz-question {
+  transition: ease-in-out 0.5s;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
