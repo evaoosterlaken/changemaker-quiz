@@ -451,7 +451,7 @@ const q1 = new Question(
   1,
   "one",
   "In a group discussion, you are most likely the person...",
-  ["talking", "listening"]
+  ["speaking", "listening"]
 );
 
 const q2 = new Question(
